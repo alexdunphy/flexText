@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Flexible, auto-height textarea</title>
+
+    <!-- Application styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <a href="https://github.com/alexdunphy/flexText"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+
+    <div class="wrap">
+        <h1>Flexible, auto-height textarea</h1>
+
+        <textarea id="content" placeholder="Type/paste/shout content&hellip;"></textarea>
+
+        <small>Once the content stretches beyond the set min-height, the textarea will get its expansion on. Boom.<br />Get the <a href="https://github.com/alexdunphy/flexText">source on Github</a>.</small>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+    <script src="assets/js/jquery.flexText.min.js"></script>
+    <script>
+        $(function () {
+            $('#content').flexText();
+        });
+    </script>
+</body>
+</html>
