@@ -47,5 +47,8 @@ textarea,
 
 textarea,
 .flex-text-wrap pre {
-    /* Set typography, padding, border-width (and optionally min-height) to make identical across textarea & pre */
+    /*
+     * Add custom styling here
+     * Ensure that typography, padding, border-width (and optionally min-height) are identical across textarea & pre
+     */
 }
