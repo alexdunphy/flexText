@@ -1,7 +1,10 @@
-# [jQuery flexText: auto-height textareas](http://alexdunphy.github.com/flexText/)
+# [jQuery flexText: auto-height textareas](http://alexdunphy.github.io/flexText/)
 
 A lightweight (~800 bytes) jQuery version of the [A List Apart - Expanding textarea](http://www.alistapart.com/articles/expanding-text-areas-made-elegant/) concept for auto-height textareas, extended for additional browser compatibility, addressing a few browser bugs/issues. Tested and working fine in Safari Mac/iOS 5, Chrome, Firefox 3.6+, Opera, IE8+. (In IE7 the functionality is fine, but the textarea may not be pixel-perfect due to box-sizing browser limitations).
 
+## Demo
+
+See [the project page](http://alexdunphy.github.io/flexText/).
 
 ## Usage
 
@@ -16,10 +19,6 @@ $(function () {
 	$('textarea').flexText();
 });
 ````
-
-## Demo
-
-See [the project page](http://alexdunphy.github.com/flexText/).
 
 ## Requires
 
