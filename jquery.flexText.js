@@ -24,34 +24,21 @@
             this.$span = this.$textarea.prev().find('span');
 
             // Add input event listeners
-            this.$textarea.on('input propertychange', function () {
+            // * input for modern browsers
+            // * propertychange for IE 7 & 8
+            // * keyup for IE >= 9: catches keyboard-triggered undos/cuts/deletes
+            // * change for IE >= 9: catches mouse-triggered undos/cuts/deletions (when textarea loses focus)
+            this.$textarea.on('input propertychange keyup change', function () {
                 _this._mirror();
             });
 
-            // IE polyfills...
-            if ($.browser.msie) {
-                /*
-                 * IE 9 & 10 have buggy input event support (firing only on char addition, not char removal)
-                 * Binding to keyup catches keyboard-triggered undos/cuts/deletes
-                 * Binding to change catches mouse-triggered undos/cuts/deletions (when textarea loses focus)
-                 */
-                if ($.browser.version > 8) {
-                    this.$textarea.on('keyup change', function () {
-                        _this._mirror();
-                    });
-                } else if ($.browser.version < 8) {
-                    /**
-                     * jQuery val() strips carriage return chars by default (see http://api.jquery.com/val/)
-                     * This causes issues in IE7, but a valHook can be used to preserve these chars
-                     */
-                    $.valHooks.textarea = {
-                        get: function (elem) {
-                            return elem.value.replace(/\r?\n/g, "\r\n");
-                        }
-                    };
+            // jQuery val() strips carriage return chars by default (see http://api.jquery.com/val/)
+            // This causes issues in IE7, but a valHook can be used to preserve these chars
+            $.valHooks.textarea = {
+                get: function (elem) {
+                    return elem.value.replace(/\r?\n/g, "\r\n");
                 }
-            }
-
+            };
 
             // Mirror contents once on init
             this._mirror();
