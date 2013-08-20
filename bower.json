@@ -1,0 +1,26 @@
+{
+  "name": "flexText",
+  "version": "0.0.0",
+  "homepage": "http://alexdunphy.github.io/flexText/",
+  "authors": [
+    "Alex Dunphy - https://github.com/alexdunphy"
+  ],
+  "description": "A lightweight jQuery plugin for auto-height textareas.",
+  "main": "jquery.flexText.min.js",
+  "keywords": [
+    "flex",
+    "text",
+    "flextext",
+    "flex-text",
+    "flexible",
+    "textarea",
+    "textareas"
+  ],
+  "ignore": [
+    "**/.*",
+    "demo"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1"
+  }
+}
