@@ -3,7 +3,7 @@
  * --------------------------------------
  * Requires: jQuery 1.7+
  * Usage example: $('textarea').flexText()
- * Info: https://github.com/alexdunphy/flexible-textareas
+ * Info: https://github.com/alexdunphy/flexText
  */
 ;(function ($) {
 
