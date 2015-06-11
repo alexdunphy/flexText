@@ -5,7 +5,13 @@
  * Usage example: $('textarea').flexText()
  * Info: https://github.com/alexdunphy/flexible-textareas
  */
-;(function ($) {
+;(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else {
+        factory(root.jQuery);
+    }
+}(this, function ($) {
 
     // Constructor
     function FT(elem) {
@@ -61,4 +67,4 @@
         });
     };
 
-})(jQuery);
+}));
