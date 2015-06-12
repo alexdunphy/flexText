@@ -1,0 +1,29 @@
+{
+  "name": "jquery-flextext",
+  "version": "1.0.2",
+  "description": "A lightweight jQuery version of the A List Apart - Expandind textarea concepto for auto-height textareas, extended for additional browser compatibility, addressing a few browser bug/issues. Tested and working fine in Safari Mac/iOs 5, Chrome, Firefox 3.6+, Opera, IE8+.",
+  "main": "jquery.flexText.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdunphy/flexText"
+  },
+  "keywords": [
+    "jquery",
+    "textarea",
+    "auto",
+    "height",
+    "flextext"
+  ],
+  "author": "Alex Dunphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexdunphy/flexText/issues"
+  },
+  "homepage": "https://github.com/alexdunphy/flexText",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
