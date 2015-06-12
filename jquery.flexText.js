@@ -29,22 +29,22 @@
             outline: '0'
         },
         cssGlobPre = {
-			margin: '0',
-			border: '0',
-			outline: '0',
+            margin: '0',
+            border: '0',
+            outline: '0',
             width: '100%',
-			visibility: 'hidden',
+            visibility: 'hidden',
             'white-space': 'pre-wrap',
-			'box-sizing': 'border-box'            
+            'box-sizing': 'border-box'            
         },
         cssGlobTextArea = {
             position: 'absolute',
             top: '0',
             left: '0',
             width: '100%',
-			height: '100%',
-			resize: 'none',
-			margin: '0',
+            height: '100%',
+            resize: 'none',
+            margin: '0',
             'box-sizing': 'border-box'
         };
 
@@ -54,13 +54,13 @@
                 cssPre = this.$textarea.css([
                     'border','outline','padding',
                     'font','letter-spacing','word-spacing',
-					'text-align','text-decoration',
+                    'text-align','text-decoration',
                     'text-indent','text-transform'
                 ]),
-				cssWrapper = this.$textarea.css(['margin']);
+                cssWrapper = this.$textarea.css(['margin']);
 
-			cssWrapper['min-height'] = this.$textarea.outerHeight();
-			
+            cssWrapper['min-height'] = this.$textarea.outerHeight();
+            
             // Insert wrapper elem & pre/span for textarea mirroring
             this.$textarea.wrap('<div />').before('<pre aria-hidden="true" role="presentation"><span /><br /></pre>');
 
