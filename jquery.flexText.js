@@ -5,13 +5,16 @@
  * Usage example: $('textarea').flexText()
  * Info: https://github.com/alexdunphy/flexible-textareas
  */
-;(function (root, factory) {
+
+(function (factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('jquery'));
     } else {
-        factory(root.jQuery);
+        factory(jQuery);
     }
-}(this, function ($) {
+}(function ($) {
 
     // Constructor
     function FT(elem) {
@@ -19,15 +22,53 @@
 
         this._init();
     }
+    
+    var cssGlobWrapper = {
+            position: 'relative',
+            padding: '0',
+            outline: '0'
+        },
+        cssGlobPre = {
+			margin: '0',
+			border: '0',
+			outline: '0',
+            width: '100%',
+			visibility: 'hidden',
+            'white-space': 'pre-wrap',
+			'box-sizing': 'border-box'            
+        },
+        cssGlobTextArea = {
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+			height: '100%',
+			resize: 'none',
+			margin: '0',
+            'box-sizing': 'border-box'
+        };
 
     FT.prototype = {
         _init: function () {
-            var _this = this;
+            var _this = this,
+                cssPre = this.$textarea.css([
+                    'border','outline','padding',
+                    'font','letter-spacing','word-spacing',
+					'text-align','text-decoration',
+                    'text-indent','text-transform'
+                ]),
+				cssWrapper = this.$textarea.css(['margin']);
 
+			cssWrapper['min-height'] = this.$textarea.outerHeight();
+			
             // Insert wrapper elem & pre/span for textarea mirroring
-            this.$textarea.wrap('<div class="flex-text-wrap" />').before('<pre><span /><br /><br /></pre>');
+            this.$textarea.wrap('<div />').before('<pre aria-hidden="true" role="presentation"><span /><br /></pre>');
 
             this.$span = this.$textarea.prev().find('span');
+
+            this.$textarea.parent().css(cssGlobWrapper).css(cssWrapper);
+            this.$textarea.prev().css(cssGlobPre).css(cssPre);
+            this.$textarea.css(cssGlobTextArea);
 
             // Add input event listeners
             // * input for modern browsers
