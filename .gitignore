@@ -36,3 +36,5 @@ Thumbs.db
 # PhpStorm .idea #
 ##################
 .idea/
+
+node_modules/
